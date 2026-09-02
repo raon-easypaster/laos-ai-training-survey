@@ -24,7 +24,7 @@ body {
     linear-gradient(90deg, rgba(143, 47, 43, 0.025) 1px, transparent 1px),
     var(--paper);
   background-size: 32px 32px;
-  font-family: Pretendard, -apple-system, BlinkMacSystemFont, "Noto Sans KR", sans-serif;
+  font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, sans-serif;
   line-height: 1.65;
   min-height: 100vh;
 }
