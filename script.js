@@ -1,4 +1,18 @@
-const FORM_ENDPOINT = "";
+const GOOGLE_FORM_ENDPOINT =
+  "https://docs.google.com/forms/u/0/d/e/1FAIpQLScQb92ohye5of3qKJiRq3M7yuC0mi-NBJ6eIPZafhsd5fxw4g/formResponse";
+const GOOGLE_FORM_FIELDS = {
+  q1: "entry.977992145",
+  q2: "entry.88707990",
+  q3: "entry.2063560489",
+  q4: "entry.2062452816",
+  q5: "entry.295808039",
+  q6: "entry.1188440456",
+  q7: "entry.1122973137",
+  q8: "entry.1139602114",
+  q9: "entry.807158100",
+  q10: "entry.1194710033",
+  q11: "entry.1347806745",
+};
 const STORAGE_KEY = "laos-ai-survey-draft-v1";
 const form = document.querySelector("#surveyForm");
 const progressBar = document.querySelector("#progressBar");
@@ -93,14 +107,27 @@ function validateForm() {
   return true;
 }
 
-function downloadResponse(payload) {
-  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json;charset=utf-8" });
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement("a");
-  link.href = url;
-  link.download = `AI-교육-설문-${new Date().toISOString().slice(0, 10)}.json`;
-  link.click();
-  URL.revokeObjectURL(url);
+function toGoogleFormData(payload) {
+  const googleData = new URLSearchParams();
+
+  ["q1", "q2", "q3", "q4", "q5", "q7", "q8", "q9", "q11"].forEach((key) => {
+    if (payload[key]) googleData.append(GOOGLE_FORM_FIELDS[key], payload[key]);
+  });
+
+  ["q6", "q10"].forEach((key) => {
+    payload[key].forEach((value) => {
+      if (value === "기타") {
+        googleData.append(GOOGLE_FORM_FIELDS[key], "__other_option__");
+        googleData.append(`${GOOGLE_FORM_FIELDS[key]}.other_option_response`, payload[`${key}Other`]);
+      } else {
+        googleData.append(GOOGLE_FORM_FIELDS[key], value);
+      }
+    });
+  });
+
+  googleData.append("fvv", "1");
+  googleData.append("pageHistory", "0");
+  return googleData;
 }
 
 form.addEventListener("input", (event) => {
@@ -123,22 +150,21 @@ form.addEventListener("submit", async (event) => {
   const payload = getPayload();
   const button = form.querySelector("button[type='submit']");
   button.disabled = true;
-  submitStatus.textContent = "응답을 준비하고 있습니다…";
+  submitStatus.textContent = "응답을 제출하고 있습니다…";
 
   try {
-    if (FORM_ENDPOINT) {
-      const response = await fetch(FORM_ENDPOINT, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-      if (!response.ok) throw new Error("응답 저장에 실패했습니다.");
-      successMessage.textContent = "소중한 의견이 안전하게 제출되었습니다. 감사합니다.";
-    } else {
-      downloadResponse(payload);
-      successMessage.textContent = "현재는 응답 파일이 기기에 저장됩니다. 수집 주소를 연결하면 바로 제출되도록 전환됩니다.";
-    }
+    await fetch(GOOGLE_FORM_ENDPOINT, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: toGoogleFormData(payload),
+    });
+    successMessage.textContent = "소중한 의견이 Google Form에 제출되었습니다. 감사합니다.";
     localStorage.removeItem(STORAGE_KEY);
+    form.reset();
+    syncOtherFields();
+    updateProgress();
+    charCount.textContent = "0";
     successDialog.showModal();
     submitStatus.textContent = "";
   } catch (error) {
