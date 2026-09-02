@@ -1,18 +1,18 @@
 const GOOGLE_FORM_ENDPOINT =
-  "https://docs.google.com/forms/d/e/1FAIpQLSdprOyARY3EYbnt61mMLpyeJiYVMrmpco3YNcmHHzjDpqMupg/formResponse";
+  "https://docs.google.com/forms/d/e/1FAIpQLSdprOyARY3EYbnt6lmMLpyeJiYVMrmpco3YNcmHHzjDpqMupg/formResponse";
 const GOOGLE_FORM_FIELDS = {
-  q0: "entry.1492285916",
-  q1: "entry.246736485",
-  q2: "entry.1558177838",
-  q3: "entry.1785884113",
-  q4: "entry.840690990",
-  q5: "entry.1231612713",
-  q6: "entry.813826485",
-  q7: "entry.148277858",
-  q8: "entry.1541145748",
-  q9: "entry.2104473925",
-  q10: "entry.1842178031",
-  q11: "entry.1572949984",
+  q0: "entry.1854980917",
+  q1: "entry.46208689",
+  q2: "entry.710343738",
+  q3: "entry.1587771847",
+  q4: "entry.1278130471",
+  q5: "entry.2053560430",
+  q6: "entry.2074971978",
+  q7: "entry.2056016261",
+  q8: "entry.325503724",
+  q9: "entry.1032592620",
+  q10: "entry.1604710063",
+  q11: "entry.1823296068",
 };
 const STORAGE_KEY = "laos-ai-survey-draft-v1";
 const form = document.querySelector("#surveyForm");
