@@ -27,7 +27,7 @@
         <span>라오스 AI 교육</span>
       </a>
       <div class="progress-copy" aria-live="polite">
-        <span id="answeredCount">0</span><span class="progress-copy__muted"> / 10 응답</span>
+        <span id="answeredCount">0</span><span class="progress-copy__muted"> / 11 응답</span>
       </div>
     </header>
 
@@ -52,13 +52,25 @@
           <span><span aria-hidden="true">✓</span> 1–10번 필수</span>
           <span><span aria-hidden="true">⌘</span> 자동 임시저장</span>
         </div>
-        <a class="start-button" href="#question-1">
+        <a class="start-button" href="#question-0">
           설문 시작하기
           <span aria-hidden="true">↓</span>
         </a>
       </section>
 
       <form id="surveyForm" novalidate>
+        <section class="question-card" id="question-0" data-required-group="q0">
+          <div class="question-card__number">00</div>
+          <fieldset>
+            <legend>참석하신 반을 선택해 주세요. <span class="required">필수</span></legend>
+            <div class="option-list option-list--compact">
+              <label class="option"><input type="radio" name="q0" value="오전반" required /><span>오전반</span></label>
+              <label class="option"><input type="radio" name="q0" value="야간반" /><span>야간반</span></label>
+            </div>
+          </fieldset>
+          <p class="field-error">하나를 선택해 주세요.</p>
+        </section>
+
         <section class="question-card" id="question-1" data-required-group="q1">
           <div class="question-card__number">01</div>
           <fieldset>

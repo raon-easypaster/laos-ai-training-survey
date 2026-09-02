@@ -1,6 +1,7 @@
 const GOOGLE_FORM_ENDPOINT =
-  "https://docs.google.com/forms/u/0/d/e/1FAIpQLScQb92ohye5of3qKJiRq3M7yuC0mi-NBJ6eIPZafhsd5fxw4g/formResponse";
+  "https://docs.google.com/forms/d/e/1FAIpQLScQb92ohye5of3qKJiRq3M7yuC0mi-NBJ6eIPZafhsd5fxw4g/formResponse";
 const GOOGLE_FORM_FIELDS = {
+  q0: "entry.REPLACE_WITH_SESSION_ENTRY_ID",
   q1: "entry.977992145",
   q2: "entry.88707990",
   q3: "entry.2063560489",
@@ -40,6 +41,7 @@ function getPayload() {
   const data = new FormData(form);
   const payload = {
     submittedAt: new Date().toISOString(),
+    q0: data.get("q0") || "",
     q1: data.get("q1") || "",
     q2: data.get("q2") || "",
     q3: data.get("q3") || "",
@@ -110,7 +112,7 @@ function validateForm() {
 function toGoogleFormData(payload) {
   const googleData = new URLSearchParams();
 
-  ["q1", "q2", "q3", "q4", "q5", "q7", "q8", "q9", "q11"].forEach((key) => {
+  ["q0", "q1", "q2", "q3", "q4", "q5", "q7", "q8", "q9", "q11"].forEach((key) => {
     if (payload[key]) googleData.append(GOOGLE_FORM_FIELDS[key], payload[key]);
   });
 
