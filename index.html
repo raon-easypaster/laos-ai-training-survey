@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#8f2f2b" />
+    <meta
+      name="description"
+      content="라오스 선교사님들을 위한 3일 AI 교육 만족도 및 피드백 설문"
+    />
+    <title>3일 AI 교육 만족도 및 피드백 설문</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&family=Pretendard:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-glow page-glow--one" aria-hidden="true"></div>
+    <div class="page-glow page-glow--two" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="설문 처음으로">
+        <span class="brand__mark" aria-hidden="true">✦</span>
+        <span>라오스 AI 교육</span>
+      </a>
+      <div class="progress-copy" aria-live="polite">
+        <span id="answeredCount">0</span><span class="progress-copy__muted"> / 10 응답</span>
+      </div>
+    </header>
+
+    <div class="progress-track" aria-hidden="true">
+      <div id="progressBar" class="progress-track__bar"></div>
+    </div>
+
+    <main id="top">
+      <section class="intro" aria-labelledby="survey-title">
+        <div class="eyebrow"><span></span> 3-DAY AI WORKSHOP <span></span></div>
+        <h1 id="survey-title">
+          3일 AI 교육<br />
+          <em>만족도 및 피드백 설문</em>
+        </h1>
+        <p class="intro__lead">안녕하세요.<br />3일간의 AI 교육에 함께해 주셔서 감사합니다.</p>
+        <p class="intro__body">
+          이번 설문은 교육에 대한 만족도와 실제 활용 가능성을 확인하고, 앞으로 더 좋은 AI 교육을
+          준비하기 위한 자료로 사용됩니다. 솔직하고 편안하게 응답해 주세요.
+        </p>
+        <div class="intro__meta">
+          <span><span aria-hidden="true">◷</span> 약 5분</span>
+          <span><span aria-hidden="true">✓</span> 1–10번 필수</span>
+          <span><span aria-hidden="true">⌘</span> 자동 임시저장</span>
+        </div>
+        <a class="start-button" href="#question-1">
+          설문 시작하기
+          <span aria-hidden="true">↓</span>
+        </a>
+      </section>
+
+      <form id="surveyForm" novalidate>
+        <section class="question-card" id="question-1" data-required-group="q1">
+          <div class="question-card__number">01</div>
+          <fieldset>
+            <legend>교육에 참여하기 전 AI 사용 경험은 어느 정도였습니까? <span class="required">필수</span></legend>
+            <div class="option-list">
+              <label class="option"><input type="radio" name="q1" value="거의 사용해 본 적이 없다" required /><span>거의 사용해 본 적이 없다</span></label>
+              <label class="option"><input type="radio" name="q1" value="몇 번 사용해 본 적이 있다" /><span>몇 번 사용해 본 적이 있다</span></label>
+              <label class="option"><input type="radio" name="q1" value="필요할 때 가끔 사용하고 있었다" /><span>필요할 때 가끔 사용하고 있었다</span></label>
+              <label class="option"><input type="radio" name="q1" value="비교적 자주 사용하고 있었다" /><span>비교적 자주 사용하고 있었다</span></label>
+              <label class="option"><input type="radio" name="q1" value="업무나 사역에 적극적으로 활용하고 있었다" /><span>업무나 사역에 적극적으로 활용하고 있었다</span></label>
+            </div>
+          </fieldset>
+          <p class="field-error">하나를 선택해 주세요.</p>
+        </section>
+
+        <section class="question-card" id="question-2" data-required-group="q2">
+          <div class="question-card__number">02</div>
+          <fieldset>
+            <legend>이번 3일간의 AI 교육에 전반적으로 얼마나 만족하셨습니까? <span class="required">필수</span></legend>
+            <div class="scale" role="radiogroup" aria-label="1점 매우 불만족부터 5점 매우 만족까지">
+              <span class="scale__caption">매우 불만족</span>
+              <div class="scale__choices">
+                <label><input type="radio" name="q2" value="1" required /><span>1</span></label>
+                <label><input type="radio" name="q2" value="2" /><span>2</span></label>
+                <label><input type="radio" name="q2" value="3" /><span>3</span></label>
+                <label><input type="radio" name="q2" value="4" /><span>4</span></label>
+                <label><input type="radio" name="q2" value="5" /><span>5</span></label>
+              </div>
+              <span class="scale__caption scale__caption--right">매우 만족</span>
+            </div>
+          </fieldset>
+          <p class="field-error">점수를 선택해 주세요.</p>
+        </section>
+
+        <section class="question-card" id="question-3" data-required-group="q3">
+          <div class="question-card__number">03</div>
+          <fieldset>
+            <legend>교육 내용의 난이도는 어떠셨습니까? <span class="required">필수</span></legend>
+            <div class="option-list option-list--compact">
+              <label class="option"><input type="radio" name="q3" value="매우 쉬웠다" required /><span>매우 쉬웠다</span></label>
+              <label class="option"><input type="radio" name="q3" value="조금 쉬웠다" /><span>조금 쉬웠다</span></label>
+              <label class="option"><input type="radio" name="q3" value="적절했다" /><span>적절했다</span></label>
+              <label class="option"><input type="radio" name="q3" value="조금 어려웠다" /><span>조금 어려웠다</span></label>
+              <label class="option"><input type="radio" name="q3" value="매우 어려웠다" /><span>매우 어려웠다</span></label>
+            </div>
+          </fieldset>
+          <p class="field-error">하나를 선택해 주세요.</p>
+        </section>
+
+        <section class="question-card" id="question-4" data-required-group="q4">
+          <div class="question-card__number">04</div>
+          <fieldset>
+            <legend>이번 교육을 통해 AI에 대한 이해와 활용 자신감이 교육 전보다 높아졌습니까? <span class="required">필수</span></legend>
+            <div class="scale">
+              <span class="scale__caption">전혀 그렇지 않다</span>
+              <div class="scale__choices">
+                <label><input type="radio" name="q4" value="1" required /><span>1</span></label><label><input type="radio" name="q4" value="2" /><span>2</span></label><label><input type="radio" name="q4" value="3" /><span>3</span></label><label><input type="radio" name="q4" value="4" /><span>4</span></label><label><input type="radio" name="q4" value="5" /><span>5</span></label>
+              </div>
+              <span class="scale__caption scale__caption--right">매우 그렇다</span>
+            </div>
+          </fieldset>
+          <p class="field-error">점수를 선택해 주세요.</p>
+        </section>
+
+        <section class="question-card" id="question-5" data-required-group="q5">
+          <div class="question-card__number">05</div>
+          <fieldset>
+            <legend>이번 교육 내용이 실제 선교 및 사역 현장에서 활용하는 데 도움이 될 것이라고 생각하십니까? <span class="required">필수</span></legend>
+            <div class="scale">
+              <span class="scale__caption">전혀 도움되지 않음</span>
+              <div class="scale__choices">
+                <label><input type="radio" name="q5" value="1" required /><span>1</span></label><label><input type="radio" name="q5" value="2" /><span>2</span></label><label><input type="radio" name="q5" value="3" /><span>3</span></label><label><input type="radio" name="q5" value="4" /><span>4</span></label><label><input type="radio" name="q5" value="5" /><span>5</span></label>
+              </div>
+              <span class="scale__caption scale__caption--right">매우 도움됨</span>
+            </div>
+          </fieldset>
+          <p class="field-error">점수를 선택해 주세요.</p>
+        </section>
+
+        <section class="question-card" id="question-6" data-required-group="q6">
+          <div class="question-card__number">06</div>
+          <fieldset>
+            <legend>이번 교육에서 가장 도움이 되었던 내용은 무엇입니까? <span class="required">필수</span></legend>
+            <p class="question-hint">복수 선택할 수 있습니다.</p>
+            <div class="check-grid">
+              <label class="check-option"><input type="checkbox" name="q6" value="AI의 기본 개념과 이해" /><span>AI의 기본 개념과 이해</span></label>
+              <label class="check-option"><input type="checkbox" name="q6" value="ChatGPT 등 생성형 AI 사용법" /><span>ChatGPT 등 생성형 AI 사용법</span></label>
+              <label class="check-option"><input type="checkbox" name="q6" value="좋은 질문과 프롬프트 작성법" /><span>좋은 질문과 프롬프트 작성법</span></label>
+              <label class="check-option"><input type="checkbox" name="q6" value="글쓰기 및 문서 작성" /><span>글쓰기 및 문서 작성</span></label>
+              <label class="check-option"><input type="checkbox" name="q6" value="번역 및 언어 활용" /><span>번역 및 언어 활용</span></label>
+              <label class="check-option"><input type="checkbox" name="q6" value="자료 조사·요약·분석" /><span>자료 조사·요약·분석</span></label>
+              <label class="check-option"><input type="checkbox" name="q6" value="교육자료 및 콘텐츠 제작" /><span>교육자료 및 콘텐츠 제작</span></label>
+              <label class="check-option"><input type="checkbox" name="q6" value="이미지 제작" /><span>이미지 제작</span></label>
+              <label class="check-option"><input type="checkbox" name="q6" value="홈페이지·앱 등 AI를 활용한 제작" /><span>홈페이지·앱 등 AI를 활용한 제작</span></label>
+              <label class="check-option"><input type="checkbox" name="q6" value="AI를 실제 사역에 적용하는 방법" /><span>AI를 실제 사역에 적용하는 방법</span></label>
+              <label class="check-option check-option--other"><input type="checkbox" name="q6" value="기타" data-other="q6Other" /><span>기타</span></label>
+            </div>
+            <input class="other-input" id="q6Other" name="q6Other" type="text" placeholder="기타 내용을 적어 주세요" disabled />
+          </fieldset>
+          <p class="field-error">하나 이상 선택해 주세요.</p>
+        </section>
+
+        <section class="question-card" id="question-7" data-required-group="q7">
+          <div class="question-card__number">07</div>
+          <fieldset>
+            <legend>강의와 실습의 비율은 적절했다고 생각하십니까? <span class="required">필수</span></legend>
+            <div class="option-list">
+              <label class="option"><input type="radio" name="q7" value="강의가 조금 더 많았으면 좋겠다" required /><span>강의가 조금 더 많았으면 좋겠다</span></label>
+              <label class="option"><input type="radio" name="q7" value="현재 강의와 실습 비율이 적절했다" /><span>현재 강의와 실습 비율이 적절했다</span></label>
+              <label class="option"><input type="radio" name="q7" value="실습이 조금 더 많았으면 좋겠다" /><span>실습이 조금 더 많았으면 좋겠다</span></label>
+            </div>
+          </fieldset>
+          <p class="field-error">하나를 선택해 주세요.</p>
+        </section>
+
+        <section class="question-card" id="question-8" data-required-group="q8">
+          <div class="question-card__number">08</div>
+          <fieldset>
+            <legend>강사의 설명과 진행 방식은 이해하기 쉬웠습니까? <span class="required">필수</span></legend>
+            <div class="scale">
+              <span class="scale__caption">매우 이해하기 어려움</span>
+              <div class="scale__choices">
+                <label><input type="radio" name="q8" value="1" required /><span>1</span></label><label><input type="radio" name="q8" value="2" /><span>2</span></label><label><input type="radio" name="q8" value="3" /><span>3</span></label><label><input type="radio" name="q8" value="4" /><span>4</span></label><label><input type="radio" name="q8" value="5" /><span>5</span></label>
+              </div>
+              <span class="scale__caption scale__caption--right">매우 이해하기 쉬움</span>
+            </div>
+          </fieldset>
+          <p class="field-error">점수를 선택해 주세요.</p>
+        </section>
+
+        <section class="question-card" id="question-9" data-required-group="q9">
+          <div class="question-card__number">09</div>
+          <fieldset>
+            <legend>교육을 마친 후 AI를 실제 업무나 사역에 계속 활용해 볼 의향이 있으십니까? <span class="required">필수</span></legend>
+            <div class="scale">
+              <span class="scale__caption">전혀 사용할 생각 없음</span>
+              <div class="scale__choices">
+                <label><input type="radio" name="q9" value="1" required /><span>1</span></label><label><input type="radio" name="q9" value="2" /><span>2</span></label><label><input type="radio" name="q9" value="3" /><span>3</span></label><label><input type="radio" name="q9" value="4" /><span>4</span></label><label><input type="radio" name="q9" value="5" /><span>5</span></label>
+              </div>
+              <span class="scale__caption scale__caption--right">적극적으로 활용할 생각</span>
+            </div>
+          </fieldset>
+          <p class="field-error">점수를 선택해 주세요.</p>
+        </section>
+
+        <section class="question-card" id="question-10" data-required-group="q10">
+          <div class="question-card__number">10</div>
+          <fieldset>
+            <legend>앞으로 AI 교육이 다시 진행된다면 어떤 내용을 더 배우고 싶으십니까? <span class="required">필수</span></legend>
+            <p class="question-hint">복수 선택할 수 있습니다.</p>
+            <div class="check-grid">
+              <label class="check-option"><input type="checkbox" name="q10" value="ChatGPT를 더 깊이 활용하는 방법" /><span>ChatGPT를 더 깊이 활용하는 방법</span></label>
+              <label class="check-option"><input type="checkbox" name="q10" value="프롬프트 작성 심화" /><span>프롬프트 작성 심화</span></label>
+              <label class="check-option"><input type="checkbox" name="q10" value="설교·성경공부·교육자료 제작" /><span>설교·성경공부·교육자료 제작</span></label>
+              <label class="check-option"><input type="checkbox" name="q10" value="번역 및 현지어 활용" /><span>번역 및 현지어 활용</span></label>
+              <label class="check-option"><input type="checkbox" name="q10" value="이미지·포스터 제작" /><span>이미지·포스터 제작</span></label>
+              <label class="check-option"><input type="checkbox" name="q10" value="영상 제작 및 편집" /><span>영상 제작 및 편집</span></label>
+              <label class="check-option"><input type="checkbox" name="q10" value="문서·보고서·행정업무 자동화" /><span>문서·보고서·행정업무 자동화</span></label>
+              <label class="check-option"><input type="checkbox" name="q10" value="홈페이지·웹앱 만들기" /><span>홈페이지·웹앱 만들기</span></label>
+              <label class="check-option"><input type="checkbox" name="q10" value="개인 자료를 AI와 연결하여 활용하기" /><span>개인 자료를 AI와 연결하여 활용하기</span></label>
+              <label class="check-option"><input type="checkbox" name="q10" value="AI 에이전트 및 업무 자동화" /><span>AI 에이전트 및 업무 자동화</span></label>
+              <label class="check-option"><input type="checkbox" name="q10" value="AI의 윤리와 안전한 활용" /><span>AI의 윤리와 안전한 활용</span></label>
+              <label class="check-option check-option--other"><input type="checkbox" name="q10" value="기타" data-other="q10Other" /><span>기타</span></label>
+            </div>
+            <input class="other-input" id="q10Other" name="q10Other" type="text" placeholder="기타 내용을 적어 주세요" disabled />
+          </fieldset>
+          <p class="field-error">하나 이상 선택해 주세요.</p>
+        </section>
+
+        <section class="question-card question-card--comment" id="question-11">
+          <div class="question-card__number">11</div>
+          <label class="textarea-label" for="q11">이번 교육에 대한 자유로운 의견을 적어 주세요. <span class="optional">선택</span></label>
+          <p class="question-hint">가장 좋았던 점, 도움이 되었던 점, 아쉬웠던 점, 개선할 점, 추가로 배우고 싶은 내용, 강사에게 전하고 싶은 말씀 등을 편안하게 적어 주세요.</p>
+          <textarea id="q11" name="q11" rows="8" maxlength="2000" placeholder="여기에 자유롭게 작성해 주세요."></textarea>
+          <div class="char-count"><span id="charCount">0</span> / 2,000</div>
+        </section>
+
+        <section class="submit-card">
+          <div class="submit-card__icon" aria-hidden="true">♡</div>
+          <div>
+            <h2>소중한 의견을 들려주세요</h2>
+            <p>작성하신 내용을 한 번 확인한 후 제출해 주세요.</p>
+          </div>
+          <button class="submit-button" type="submit">
+            <span>응답 제출하기</span>
+            <span aria-hidden="true">→</span>
+          </button>
+          <p id="submitStatus" class="submit-status" role="status" aria-live="polite"></p>
+        </section>
+      </form>
+    </main>
+
+    <footer>
+      <p>3일 동안 AI 교육에 함께해 주셔서 감사합니다.</p>
+      <p>이번 교육이 각자의 현장과 사역에서 AI를 좋은 도구로 활용하는 작은 시작이 되기를 바랍니다.</p>
+    </footer>
+
+    <dialog id="successDialog" class="success-dialog">
+      <div class="success-dialog__mark" aria-hidden="true">✓</div>
+      <h2>응답이 준비되었습니다</h2>
+      <p id="successMessage">소중한 의견을 남겨 주셔서 감사합니다.</p>
+      <button id="closeDialog" type="button">확인</button>
+    </dialog>
+
+    <script src="script.js"></script>
+  </body>
+</html>
